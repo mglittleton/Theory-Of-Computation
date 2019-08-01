@@ -1,5 +1,6 @@
 import re # module for processing regular expressions https://docs.python.org/3/library/re.html
 import sys
+import codecs
 import csv
 if __name__ == '__main__':
   # Exit if command line args entered incorrectly
@@ -11,16 +12,17 @@ if __name__ == '__main__':
 filename = sys.argv[1]
 
 # TODO Read HTML file
-
+text = open('stackoverflow.html', errors='ignore').read()
 
 # TODO Set up regex
-
+match_list = re.findall(r'https?://[www\.]?\w+\.\w+[/\w+]*', text)
 
 # TODO Find links using regex, save in list called 'matches'
 
 
+
 # Check matches, print results
-# TODO Read in links from answers.txt (hint...this is a CSV file), 
+# TODO Read in links from answers.txt (hint...this is a CSV file),
 # save in list called 'answer_data'
 
 

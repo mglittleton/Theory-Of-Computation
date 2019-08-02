@@ -15,10 +15,14 @@ filename = sys.argv[1]
 text = open('stackoverflow.html', errors='ignore').read()
 
 # TODO Set up regex
-match_list = re.findall(r'https?://[www\.]?\w+\.\w+[/\w+]*', text)
+match_list = re.findall(r'https?://[^."\']+\.[^"?\']+', text)
 
 # TODO Find links using regex, save in list called 'matches'
+list_file = open('matches.txt', 'w')
+for i in match_list:
+  list_file.write(i + '\n')
 
+list_file.close()
 
 
 # Check matches, print results
